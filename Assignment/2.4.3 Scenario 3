@@ -1,0 +1,26 @@
+Table movie {
+  id int [pk, increment]
+  movie_title varchar
+  genre varchar
+  price varchar
+}
+
+Table customer {
+  id int [pk, increment]
+  name varchar
+  address varchar
+  phone varchar
+  email varchar
+}
+
+Table customer_order {
+  id int [pk, increment]
+  customer_id int
+  movie_id int
+  orderitem int
+}
+
+
+Ref: "customer"."id" < "customer_order"."customer_id"
+
+Ref: "movie"."id" < "customer_order"."movie_id"

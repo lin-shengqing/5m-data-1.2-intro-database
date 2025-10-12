@@ -1,0 +1,25 @@
+Table Student {
+  id int [pk, increment]
+  name varchar
+  address varchar
+  phone varchar
+  email varchar
+  classid int
+}
+Table Teacher {
+  id int [pk, increment]
+  name varchar
+  address varchar
+  phone varchar
+  email varchar
+}
+
+Table Class {
+  id int [pk, increment]
+  name varchar
+  teacher_id int
+}
+
+Ref: "Teacher"."id" <> "Class"."teacher_id"
+
+Ref: "Student"."classid" - "Class"."id"

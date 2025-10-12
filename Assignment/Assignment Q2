@@ -1,0 +1,31 @@
+Table Customer {
+  id int [pk, increment]
+  name varchar
+  address varchar
+  phone varchar
+  email varchar
+}
+
+Table Book {
+  id int [pk, increment]
+  book_title varchar
+  author varchar
+  isbn int
+}
+
+Table Cart {
+  id int [pk, increment]
+  customer_id int
+}
+
+Table CartItem {
+  id int [pk, increment]
+  item_id int
+  book_id int
+}
+
+Ref: "Customer"."id" < "Cart"."customer_id"
+
+Ref: "Cart"."customer_id" < "CartItem"."item_id"
+
+Ref: "Book"."id" < "CartItem"."book_id"

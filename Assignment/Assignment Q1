@@ -1,0 +1,28 @@
+Table User {
+  id int [pk, increment]
+  username varchar
+  email varchar
+  created_at datetime
+}
+
+Table Post {
+  id int [pk, increment]
+  title varchar
+  body varchar
+  user_id int
+  status varchar
+  created_at datetime
+}
+
+Table Follows {
+  id int [pk, increment]
+  following_user_id int
+  followed_user_id int
+  created_at datetime
+}
+
+Ref: "User"."id" < "Post"."user_id"
+
+Ref: "User"."id" < "Follows"."following_user_id"
+
+Ref: "User"."id" < "Follows"."followed_user_id"
