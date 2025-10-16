@@ -10,7 +10,7 @@ Refer to the following markdown file for the respective sections of the class:
 - [Quiz](./quiz.md)
 - [Reference](./reference.md)
 
-## Lesson Objectives
+## Lesson Objectives 
 
 Learners will understand:
 
